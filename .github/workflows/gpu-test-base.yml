@@ -33,6 +33,6 @@ jobs:
       - name: Cypress run debug
         uses: cypress-io/github-action@v6
         env:
-          DEBUG: '@cypress/github-action, cypress:*,xvfb,xvfb-process'
+          DEBUG: '@cypress/github-action,cypress:*, cypress-verbose:*,xvfb,xvfb-process'
         with:
           browser: ${{ matrix.browser }}
