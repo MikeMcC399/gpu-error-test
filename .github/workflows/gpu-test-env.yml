@@ -19,7 +19,8 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         env:
-          ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
+#          ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
+          LIBGL_DRI3_DISABLE: 1
         with:
           browser: ${{ matrix.browser }}
 
@@ -36,6 +37,7 @@ jobs:
         uses: cypress-io/github-action@v5
         env:
           DEBUG: '@cypress/github-action, cypress:*'
-          ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
-        with:
+#          ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
+          LIBGL_DRI3_DISABLE: 1
+          with:
           browser: ${{ matrix.browser }}
