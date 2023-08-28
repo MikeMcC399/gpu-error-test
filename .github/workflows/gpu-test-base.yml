@@ -36,3 +36,35 @@ jobs:
           DEBUG: '@cypress/github-action,cypress:*, cypress-verbose:*,xvfb,xvfb-process'
         with:
           browser: ${{ matrix.browser }}
+
+  debug-windows:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        browser: [electron]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run debug
+        uses: cypress-io/github-action@v6
+        env:
+          DEBUG: '@cypress/github-action,cypress:*, cypress-verbose:*,xvfb,xvfb-process'
+        with:
+          browser: ${{ matrix.browser }}
+
+  debug-mac:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        browser: [electron]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run debug
+        uses: cypress-io/github-action@v6
+        env:
+          DEBUG: '@cypress/github-action,cypress:*, cypress-verbose:*,xvfb,xvfb-process'
+        with:
+          browser: ${{ matrix.browser }}
