@@ -8,7 +8,7 @@ on:
 
 jobs:
   electron-env:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         browser: [electron, chrome, chromium, edge, firefox]
@@ -24,7 +24,7 @@ jobs:
           browser: ${{ matrix.browser }}
 
   electron-env-debug:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         browser: [electron, chrome, chromium, edge, firefox]
